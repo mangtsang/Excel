@@ -1,3 +1,13 @@
+#### 隐藏重复行
+```vba
+Sub HideDuplication()    
+  Dim rowsCount As Integer    
+  rowsCount = Me.UsedRange.Rows.Count        
+  Range("D3:D" & rowsCount).AdvancedFilter Action:=xlFilterInPlace, CriteriaRange:= _    
+  Range("D3:D" & rowsCount), Unique:=True    ' Unique:=False 显示重复行
+End Sub
+```
+
 ####  快速删除重复记录
 ```vba
 Sub RemoveDuplicateRecord() ' 快速删除重复记录
@@ -36,3 +46,11 @@ Private Function getHtmlContentFromFile(ByVal filename As String) As String  �
   getHtmlContentFromFile = result
 End Function
 ```
+
+#### 删除重复行
+```vba
+Sub RemoveDuplicateRecord()    
+  Me.UsedRange.RemoveDuplicates Columns:=Array(1, 2, 3), Header:=xlYes
+End Sub
+```
+
