@@ -12,7 +12,7 @@ End Sub
 ```
 
 #### 读写文件
-```
+```vba
 Public Function exportHtmlToFile(ByVal dtsId As String, ByVal html As String)
   If Not CreateObject("Scripting.FileSystemObject").FolderExists("D:\DTS_TXT") Then
     CreateObject("Scripting.FileSystemObject").CreateFolder ("D:\DTS_TXT")    
